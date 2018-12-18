@@ -1,6 +1,7 @@
 var express=require('express');
 var hbs=require('hbs');
 var fs=require('fs');
+const port=process.env.PORT||3000;
 
 var app=express();
 
@@ -23,9 +24,9 @@ app.use((req,res,next)=>{
 	next();
 });
 
-app.use((req,res,next)=>{
-	res.render('maintenance.hbs');
-});
+// app.use((req,res,next)=>{
+// 	res.render('maintenance.hbs');
+// });
 
 app.use(express.static(__dirname+'/public'));
 
@@ -57,6 +58,6 @@ app.get('/err',(req,res)=>{
 	});
 });
 
-app.listen(3000,()=>{
-	console.log('Server is up on port 3000');
+app.listen(port,()=>{
+	console.log(`Server is up on port ${port}`);
 });
