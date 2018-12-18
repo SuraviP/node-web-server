@@ -52,9 +52,9 @@ app.get('/about',(req,res)=>{
 	});
 });
 
-app.get('/err',(req,res)=>{
-	res.send({
-		errmsg:'contact dumbledore'
+app.get('/projects',(req,res)=>{
+	res.render('projects.hbs',{
+		pagetitle: 'Projects Page'
 	});
 });
 
